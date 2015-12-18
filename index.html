@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Technical Market</title>
+    <link rel="icon" href="favicon.ico"/>
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/content_slider.css" />
+    <link rel="stylesheet" type="text/css" href="css/menu.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script type="text/javascript" src="js/vendors/jquery.1.3.2.min.js" ></script>
+    <script type="text/javascript" src="js/vendors/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#featured > ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true);
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <div id="templatemo_wrapper_outer">
+
+        <div id="templatemo_wrapper">
+
+            <div id="templatemo_header">
+                <div id="site_title">
+                    <h1><img src="images/templatemo_logo.png" alt="logo" /></h1>
+                </div><nav><ul><li id="cart-button"><a id="cart-label"  style="color: darkblue">Корзина </a><a id="cart-counter">0</a></li></ul></nav>
+                <nav> <div class="mainmenu">
+        <ul>
+            <li class="nc"><a href="#" onclick=hideAll()>Главная</a></li>
+            <li class="nc"><a href="#" onclick="hideAll()">Магазин</a><ul class="ch">
+                <li class="nc"><a href="#!/phones/1" onclick="show('catalog')">Телефоны</a></li>
+                <li class="nc"><a href="#!/tablets/1" onclick="show('catalog')">Планшеты</a></li>
+                <li class="nc"><a href=#!/cameras/1" onclick="show('catalog')">Камеры</a></li>
+                <li class="nc"><a href="#!/players/1" onclick="show('catalog')">Аксессуары</a></li>
+            </ul></li><span class="nav-links">
+                        <li class="nc"><a href="#!/booking" onclick="show('booking')">Заказ и доставка</a></li>
+                        <li class="nc"><a href="#!/contacts" onclick="show('contacts')">Контакты</a></li></span>
+        </ul>
+    </div></nav>
+    <div id="cart-widget">
+        <div id="cart-items">
+        </div>
+        <hr/>
+        <div id="cart-footer">
+            <button id="order-button" onclick="cart.orderClicked()">Заказать</button>
+            <div id="total-price">$0</div>
+        </div>
+    </div></div></div></div>
+</header>
+
+<div id="templatemo_slider">
+    <div id="featured" >
+        <ul class="ui-tabs-nav">
+            <li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-1"><a href="#fragment-1"><img src="images/content_slider/image1-small.jpg" alt="Image1small" /><span>Новые модели телефонов уже в продаже</span></a></li>
+            <li class="ui-tabs-nav-item" id="nav-fragment-2"><a href="#fragment-2"><img src="images/content_slider/image2-small.jpg" alt="Image2small" /><span>Гарантия 12 месяцев</span></a></li>
+            <li class="ui-tabs-nav-item" id="nav-fragment-3"><a href="#fragment-3"><img src="images/content_slider/image3-small.jpg" alt="Image3small" /><span>Новейшие модели лептопов</span></a></li>
+            <li class="ui-tabs-nav-item" id="nav-fragment-4"><a href="#fragment-4"><img src="images/content_slider/image4-small.jpg" alt="Image4small" /><span>Аксессуары на любой вкус</span></a></li>
+        </ul>
+
+        <div id="fragment-1" class="ui-tabs-panel" style="">
+            <img src="images/content_slider/image1.jpg" alt="Image 1" />
+            <div class="info" >
+                <h2><a href="#" >Смартфоны</a></h2>
+                <p>В наличии модели всех известных производителей!<a href="#!/phones/1" onclick="showPage('catalog')"> Подробнее</a></p>
+            </div>
+        </div>
+
+        <div id="fragment-2" class="ui-tabs-panel ui-tabs-hide" style="">
+            <img src="images/content_slider/image2.jpg" alt="Image 2" />
+            <div class="info" >
+                <h2><a href="#" >Планшеты</a></h2>
+                <p>Гарантия на все товары 12-24 месяца<a href="#!/tablets/1" onclick="showPage('catalog')"> Подробнее</a></p>
+            </div>
+        </div>
+
+
+        <div id="fragment-3" class="ui-tabs-panel ui-tabs-hide" style="">
+            <img src="images/content_slider/image3.jpg" alt="Image 3" />
+            <div class="info" >
+                <h2><a href="#" >Лэптопы</a></h2>
+                <p>У нас можно приобрести все новейшие модели лэптопов и камер!<a href=#!/cameras/1" onclick="showPage('catalog')"> Подробнее</a></p>
+            </div>
+        </div>
+
+
+        <div id="fragment-4" class="ui-tabs-panel ui-tabs-hide" style="">
+            <img src="images/content_slider/image4.jpg" alt="Image 4" />
+            <div class="info" >
+                <h2><a href="#" >Аксессуары</a></h2>
+                <p>Подберите подходящий аксессуар под свое приобретение!<a href="#!/players/1"onclick="showPage('catalog')"> Подробнее</a></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="body-content">
+    <div class="page" id="catalog" style="display:none">
+        <div id="device-grid"></div>
+        <div id="device-filter">
+            <div id="filter-widget">
+                <p>Детализация</p>
+                <hr>
+                <form id="filter-form" action="#"></form>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" id="contacts" style="display: none">
+        <div class="col_w220"><h2>Телефоны:</h2></div><div class="col_w220">
+        <ul>
+            <li>+327-29-678-88-88</li>
+            <li>+327-29-591-77-77</li>
+            <li>+327-29-456-56-56</li>
+        </ul></div>
+        <div class="col_w220">
+            <h2>Адрес:</h2>
+        </div><div class="col_w220">
+        <div>Проспект Независимости 4, Минск</div>
+    </div></div>
+    <div class="page" id="booking" style="display: none">
+        <div class="col_w220">
+            <a href="#/delivery" style="color: gray" onclick=showOrHideBlock("delivery")><p>Заказ</p></a>
+        </div><div class="col_w220">
+        <div class = "block" id="delivery" style="display: none">
+            <ul>
+                <p>Способ доставки</p>
+                <li>Город: <input type="text" /></li>
+                <li>Улица: <input type="text" /></li>
+                <li>Дом: <input type="text" /> Кв: <input type="text" /></li>
+                <li>Телефон: <input type="text" /></li></ul>
+            <input type="button" value="Отправить адрес" onclick="showOrHideBlock('payment')"/>
+            <input type="button" value="Сам заберу!" onclick="show_adress()"/>
+        </div>
+        <div class = "block" id="payment" style="display: none"><ul>
+            <li><p>Способ оплаты</p></li>
+            <li>Имя держателя: <input type="text" /></li>
+            <li>№ карты: <input type="text" /></li>
+            <li>CVC: <input type="text" /></li></ul>
+            <input type="button" value="Заплатить!" onclick="showOrHideBlock('booking_review')"/>
+            <input type="button" value="Наличными!" onclick="show_money_message()"/>
+        </div>
+        <div class = "block" id="booking_review" style="display: none"></div>
+    </div></div>
+    <div class="page" id="cart-page" style="display: none">
+        <h2>Корзина</h2>
+
+        <div id="cart-page-items"></div>
+        <div id="cart-page-footer">
+            <button id="return-to-catalog-button" onclick="showPage('catalog')">Хочу купить что-то ещё</button>
+            <div id="pay-section">
+                <div id="total-page-price">$0</div>
+                <button id="pay-button" onclick="showPage('booking')">Заплатить</button>
+            </div>
+        </div>
+    </div>
+    <div class="page" id="device-page" style="display: none">
+        <div id="device-wrapper"></div>
+    </div>
+</div>
+
+
+
+<script type="text/template" id="device-short-template">
+
+    <div class="device-preview">
+        <div class="image-preview">
+            <img src=<%=device.itemThumbImgUrl%> onclick = "redirect('<%= device.category %>/i<%= device.index %>')"/>
+        </div>
+        <div class="description-preview">
+            <p onclick="redirect('<%= device.category %>/i<%= device.index %>')"><%= device.itemTitle %></p>
+
+            <p onclick="redirect('<%= device.category %>/i<%= device.index %>')">$<%= device.price.min %></p>
+        </div>
+        <div class="preview-buttons">
+            <ul>
+                <li><a onclick="cart.addItem('<%= device.category %>', <%= device.index %>)">В корзину</a></li>
+                <li><a>Сравнить</a></li>
+            </ul>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/template" id="cart-item-template">
+    <div class="device-cart-view">
+        <div class="image-preview">
+            <img src=<%=device.itemThumbImgUrl%> />
+        </div>
+        <div class="description-preview">
+            <p><%= device.itemTitle %></p>
+
+            <p>$<%= device.price.min %>&nbsp(x<%= count %>)</p>
+        </div>
+        <div class="delete-button-container">
+            <button onclick="cart.deleteItem(<%= number %>)">Удалить</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="cart-page-item-template">
+    <div class="device-cart-view">
+        <div class="image-preview">
+            <img src=<%=device.itemThumbImgUrl%> />
+        </div>
+        <div class="description-preview">
+            <p><%= device.itemTitle %></p>
+            <p>$<%= device.price.min %></p>
+        </div>
+        <div class=count-editor>
+            <input type="number" onchange="cart.onCountChanged(<%= number%>, this.value)" value="<%= count %>"/>
+            <span id="total-item-price">$<%= totalItemPrice %></span>
+        </div>
+        <div class="delete-button-container">
+            <button onclick="cart.deleteItem(<%= number %>)">Удалить</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="device-template">
+    <div id="image-gallery"></div>
+    <h1><%= device.itemTitle %></h1>
+    <h2>$<%= device.price.min%></h2>
+    <div id="device-description"><p><%=device.shortDescr%></p></div>
+    <div id="device-buttons">
+        <button onclick="cart.addItem('<%= category %>', <%= index %>)">В корзину</button>
+        <button>Сравнить</button>
+    </div>
+    <div id="device-tabs">
+        <div id = "tab-buttons">
+            <button class = "tab-button selected" id="tech-info-tab-button">Техническое описание</button>
+            <button class = "tab-button" id="comments-tab-button">Отзывы</button>
+        </div>
+        <div id="tech-info-tab" class="device-tab"></div>
+        <div id="comments-tab" class="device-tab">
+            <h3>Оставьте свой отзыв</h3>
+            <hr>
+            <input type="text" placeholder="Имя">
+            <textarea>Текст отзыва</textarea>
+            <button>Опубликовать отзыв</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="image-gallery-template">
+    <div id="large-image">
+        <img src=<%=images[selected].fullSizeURL%> />
+    </div>
+    <div id="small-images">
+        <% for(var i = offset; i < offset + 3; i++){%>
+        <div onclick = "updateImageGallery('<%= category %>', <%=index%>, <%= i %>, <%= offset %>)" class="small-image <%= selected == i ? 'selected-image' : ''%>" >
+            <img  src=<%=images[i].thumbURL%> />
+        </div>
+        <% }; %>
+    </div>
+    <div id = "gallery-buttons">
+    <% if(offset > 0){%> <button onclick = "updateImageGallery('<%= category %>', <%=index%>, <%= selected %>, <%= offset -1 %>)"
+                                 id="scroll-gallery-left-button">&lt;</button> <% }; %>
+    <% if(offset < images.length - 3){%> <button onclick = "updateImageGallery('<%= category %>', <%=index%>, <%= selected %>, <%= offset + 1 %>)"
+                                                 id="scroll-gallery-right-button">&gt;</button> <% }; %>
+    </div>
+</script>
+
+<script type="text/template" id="tech-info-table-template">
+<table id="tech-info-table" border = '1'>
+    <% for(var propertyName in device.techInfo){
+        var property = device.techInfo[propertyName];
+        if(property.title && property.value){ %>
+        <tr>
+            <td><%= property.title %></td>
+            <td><%= property.value %></td>
+        </tr>
+    <% }}; %>
+</table>
+</script>
+
+<script src="js/underscore.js"></script>
+<script src="js/filter.js"></script>
+<script src="js/templating.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/devicepage.js"></script>
+<script src="js/routing.js"></script>
+
+</body>
+<footer><div id="templatemo_footer_wrapper">
+    <div id="footer_top"></div>
+
+    <div id="templatemo_footer">
+        <div class="phone-contacts">
+            <div class = "col_w220">
+                <h4>Звони нам!</h4>
+                <span>+327-29-678-88-88</span> <br/>
+                <span>+327-29-591-77-77</span> <br/>
+                <span>+327-29-456-56-56</span>
+            </div></div>
+        <div class="catalog-links left-bordered">
+            <div class = "col_w220">
+                <h4>Каталог</h4>
+                <ul>
+                    <li><a href="#!/phones/1" style="color: darkcyan">Телефоны</a></li>
+                    <li><a href="#!/tablets/1" style="color: darkcyan">Планшеты</a></li>
+                    <li><a href="#!/cameras/1" style="color: darkcyan">Фотоаппараты</a></li>
+                    <li><a href="#!/other/1" style="color: darkcyan">Аксессуары</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="subscription left-bordered">
+            <input type="email" placeholder="Введите e-mail"/> </br>
+            <input type="submit" value="Подписаться"/>
+        </div>
+    </div>
+</div>
+
+    <div id="templatemo_copyright">
+
+        Copyright © 2015
+
+    </div>
+
+</footer>
+</html>
